@@ -1,0 +1,72 @@
+html, body {
+  padding-top: 50px;
+  height: 100%;
+  font-family:Anton;
+ }
+
+.navbar-header > .navbar-brand {
+  font-size: 30px;
+  padding: 10px 10px;
+}
+
+.navbar-btn {
+  box-shadow: 0px 2px 5px grey;
+}
+
+ul.nav a:hover {
+    background-color: #2a2a2a !important;
+    color: #fec830 !important;  
+}
+
+.carousel {
+margin: 0 auto;
+}
+.numberCircle {
+margin:0 auto;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+padding: 8px;
+background: #FCCC0A;
+border: 2px solid #666;
+color: #000;
+text-align: center;
+}
+
+.square {
+width:480px;
+height: 320px;
+background: #000;
+color: #fff;
+font-size: 25px;
+}
+
+.square li:not(:last-child) {
+margin-bottom: 5px;
+}
+
+.square:hover {
+  box-shadow: 5px 5px 5px grey !important;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.caption p {
+  color: #f1f1f1;
+}
+
+.user-info {
+  color: #fff;
+  max-height: 100px
+  max-width: 100px;
+}

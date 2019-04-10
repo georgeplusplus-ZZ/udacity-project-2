@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "flash.html" %}
+  <!-- Form for Adding new Content -->
+  <form enctype='multipart/form-data' encoding='multipart/form-data' action="/user/{{user.name}}/add" method="post" id="add-form">
+    <img class="img-responsive" src="{{user.picture}}" style="max-width: 100px; height: auto;padding-bottom: 50px ">
+    <div class="form-group">
+      <label for="nameInput">Name of Attraction </label>
+      <input type="text" class="form-control" id="nameInput" name="name" value="" maxlength="80">
+    </div>
+    <div class="form-group">
+      <label for="categorySelect">Select Category</label>
+      <select class="form-control" id="categorySelect" name="category">
+        <!-- Todo: Implement loop through to automatically populate all categories. -->
+        <option>Museums</option>
+        <option>Restaurants</option>
+        <option>Nightlife</option>
+        <option>Parks</option>
+        <option>Monuments</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="descriptionInput">Add Description of Event</label>
+      <textarea class="form-control" id="descriptionInput" rows="3" name="description" value="" style="resize: none;" maxlength="250"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="imageFile">Add Image</label>
+      <input type="file" class="picture-file-input" id="imageFile" name='picture'>
+    </div>
+    <div class="actions">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <script>
+  function myFunction() {
+  var get_select = document.getElementById("categorySelect").value;
+  document.getElementById("demo").innerHTML = x;
+  }
+  </script>
+{% endblock %}

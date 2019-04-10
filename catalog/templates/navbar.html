@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Explore NYC</a>
+        </div>
+      </div>
+      <!-- Main Nav Menu -->
+      <div class="col-md-6">
+        <ul class="nav navbar-nav">
+          <li><a href="{{url_for('categoryContent', attraction_type = "museums") }}">Museums</a></li>
+          <li><a href="{{url_for('categoryContent', attraction_type = "restaurants") }}">Restaurants</a></li>
+          <li><a href="{{url_for('categoryContent', attraction_type = "nightlife") }}">Nightlife</a></li>
+          <li><a href="{{url_for('categoryContent', attraction_type = "parks") }}">Parks</a></li>
+          <li><a href="{{url_for('categoryContent', attraction_type = "monuments") }}">Monuments</a></li>
+          {% if 'username' in session %}
+          <li><a href="{{url_for('profileContent', user_name=session['username']) }}">My New York City</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <!-- Add Button  -->
+      <div class="col-md-1">
+        {% if 'username' in session %}
+        <button onclick="window.location.href='{{url_for('addContent', user_name=session['username'])}}'" class="btn btn-primary navbar-btn" style="float: right;">Add Content <i class="fa fa-plus-square-o"></i></button>
+
+        {% endif %}
+      </div>
+      <!-- Login Button -->
+      <div class="col-md-1">
+        {% if 'username' in session %}
+
+        <button onclick="window.location.href='{{url_for('logout')}}'" class="btn btn-primary navbar-btn" style="float: left;">Logout <i class="fa fa-mail-forward"></i></button>
+
+        {% else %}
+        <button onclick="window.location.href='{{url_for('show_login')}}'" class="btn btn-primary navbar-btn" style="float: left;">Login <i class="fa fa-sign-in"></i></button>
+
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover(); 
+});
+</script>
+        

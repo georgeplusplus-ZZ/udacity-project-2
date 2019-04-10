@@ -1,0 +1,32 @@
+<div id="modalEditForm" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <form action="/view/{{content_creator.name}}/{{content.id}}/edit" method="post" id="edit-form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit </h4>
+      </div>
+      <div class="modal-body">
+          <div class="edit-form-group">
+            <label for="content-name" class="form-control-label">Name:</label>
+            <input type="text" class="form-control" name="name" value="" id="content-name" placeholder="{{content.name}}">
+          </div>
+          <div class="edit-form-group">
+            <label for="description-text" class="form-control-label">Description:</label>
+            <textarea type="text" class="form-control" name="description" value="" id="description-text" style="resize: none;" placeholder="{{content.description}}"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="save" type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<script>
+  $('#save').on('click', function() {
+    var form = document.getElementById("edit-form");
+    form.submit();
+});
+</script>

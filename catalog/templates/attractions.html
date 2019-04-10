@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include "navbar.html" %}
+  <!-- Populate Attraction Panels -->
+  {% for row in attractions|batch(2) %}
+    <div class="row stylish-panel" style="padding-bottom: 50px;">
+      {% for i in row %}
+        <div class="col-md-4">
+          <div class="square">
+              <div class="thumbnail text-center" onclick="window.location.href='{{url_for('attractionContent', attraction_type=category_type,  attraction_id=i.id)}}'">
+                <img id="{{i.id}}" class="img-responsive" src="{{url_for('static', filename=i.image)}}" alt="{{i.name}}" style="width:100%;height: auto;">
+                  <div class="caption">
+                      <p>{{i.name}}</p>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+{% endblock %}
